@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: SimSun;
+            font-size: 12px;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        ul {
+            list-style-type: none;
+        }
+        
+        .clear {
+            clear: both;
+        }
+        
+        .allmap {
+            width: 628px;
+            height: 300px;
+            border: 1px solid #c9caca;
+            background: #fff;
+            z-index: 10;
+            left: -1px;
+            top: 66px;
+            position: absolute;
+            display: none;
+            color: #727171;
+        }
+        
+        .diquall {
+            width: 615px;
+            height: 28px;
+            margin: 0 auto;
+        }
+        
+        .diquall li {
+            float: left;
+            height: 28px;
+            line-height: 28px;
+        }
+        
+        .diquall li.diqutop {
+            width: 105px;
+            background: url(img/diqu.png);
+            padding-left: 10px;
+            cursor: pointer;
+        }
+        
+        .diquall li.diqutop:hover {
+            color: darkgray;
+        }
+        
+        .diquall li.diqubegin {
+            background-position: bottom;
+        }
+        
+        .diquall li.searchdq {
+            width: 146px;
+            height: 28px;
+            float: right;
+            background: url(img/find_dq.png);
+        }
+        
+        .diquall li.searchdq input[type="text"] {
+            width: 112px;
+            height: 22px;
+            border: 0;
+            border: none;
+            margin-top: 3px;
+            margin-left: 8px;
+            float: left;
+        }
+        
+        .diquall li.searchdq input[type="button"] {
+            background-color: transparent;
+            border: 0;
+            width: 22px;
+            height: 22px;
+            margin-top: 3px;
+            float: left;
+        }
+        
+        .centerlist {
+            clear: both;
+            width: 606px;
+            margin: 6px auto 0 auto;
+            height: 182px;
+            border-bottom: 1px #c9caca dashed;
+        }
+        
+        .centerlist {
+            clear: both;
+            width: 606px;
+            margin: 6px auto 0 auto;
+            height: 182px;
+            border-bottom: 1px #c9caca dashed;
+        }
+        
+        .centerlist .list_all {
+            list-style: none;
+        }
+        
+        .centerlist .list_all li,
+        .cpjzdlist li {
+            width: 96px;
+            height: 30px;
+            line-height: 30px;
+            padding-left: 5px;
+            float: left;
+            cursor: pointer;
+        }
+        
+        .centerlist .list_all li:hover,
+        .cpjzdlist li:hover {
+            color: coral;
+        }
+        
+        .endklist {
+            clear: both;
+            width: 606px;
+            margin: 0 auto;
+            height: 70px;
+        }
+        
+        .endklist h4 {
+            color: #c5151d;
+            font-size: 12px;
+            font-weight: normal;
+            line-height: 34px;
+        }
+        
+        .zebi {
+            width: 235px;
+            height: 6px;
+            margin-top: -2px;
+            margin-left: 67px;
+            background: #fff;
+        }
+        
+        ul#citylist{
+    height: 182px;
+    overflow-y:auto;
+}
+    </style>
+</head>
+
+<body>
+    <div class="allmap1">
+        <div class="zebi"></div>
+        <div class="diquall">
+            <ul id="citytab">
+                <li class="diqutop diqubegin" id="list_b1" value="0" titleselect="1">所有地区</li>
+                <li class="diqutop" titleselect="2" id="list_b2" value="0" style="display: none;">所有地区</li>
+                <li class="diqutop" titleselect="3" id="list_b3" value="0" style="display: none;">所有地区</li>
+                <li class="diqutop" titleselect="4" id="list_b4" value="0" style="display: none;">所有地区</li>
+                <li class="searchdq"> <input type="text" id="findText" placeholder="搜索其他地区">
+                    <input type="button" code="0" id="findButton">
+                </li>
+            </ul>
+        </div>
+        <div class="centerlist">
+            <div class="list_all" id="dqselect1">
+                <ul id="citylist"></ul>
+            </div>
+
+
+
+        </div>
+        <div class="endklist">
+            <h4>产品集中地</h4>
+            <div class="cpjzdlist">
+                <ul id="otherul">
+                    <li value="0" id="other_show1"></li>
+                    <li value="0" id="other_show2"></li>
+                    <li value="0" id="other_show3"></li>
+                    <li value="0" id="other_show4"></li>
+                    <li value="0" id="other_show5"></li>
+                    <li value="0" id="other_show6"></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/citys.js"></script>
+</body>
+    <script type="text/javascript">
+     $(function() {
+            $(".allmap1").citys({
+                areaName: '海',
+                arrother: [440300, 445281, 441900, 330100],
+            });
+        });
+    </script>
+</html>
