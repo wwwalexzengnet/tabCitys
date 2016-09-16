@@ -196,7 +196,7 @@
                             $this.find("#list_b3").show();
                             this.codeToNameShowTab("list_b3", code);
                             $this.find("#list_b4").hide();
-                            code = code.substring(0, 2) + "0100";
+                            code = code.toString().substring(0, 2) + "0100";
                             this.areaList(code);
                         } else {
                             $this.find("#list_b1").show();
